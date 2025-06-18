@@ -59,24 +59,6 @@ DreamFunded/
 
 ---
 
-## 📸 Screenshots
-
-### 🧍‍♂️ Student Verification Form
-![Student Form](https://i.ibb.co/3QhwQyS/1.png)
-
-### 🏫 Provider Registration Form
-![Provider Form](https://i.ibb.co/HDFGKyzM/2.png)
-
-### 📋 Submission Review Page
-![Submission Page](https://i.ibb.co/FbZQfwXL/3.png)
-
-### ✅ Form Confirmation & Validation
-![Confirmation](https://i.ibb.co/Fkc9rvLJ/4.png)
-
-### 🖥️ Responsive UI Design
-![Responsive UI](https://i.ibb.co/RGCQCbxD/5.png)
-
----
 
 ## Getting Started (For Developers)
 
