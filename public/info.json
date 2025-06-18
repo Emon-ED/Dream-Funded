@@ -1,0 +1,103 @@
+[
+    {
+      "id": 1,
+      "name": "National Talent Scholarship",
+      "provider": "Ministry of Education",
+      "eligibility": "GPA 5.00 in HSC, Bangladeshi citizen",
+      "deadline": "2025-06-15",
+      "amount": 50000,
+      "image": "https://i.ibb.co.com/3GJLxfn/1.webp",
+      "status": "Not Applied"
+    },
+    {
+      "id": 2,
+      "name": "Merit-Based University Grant",
+      "provider": "Dhaka University",
+      "eligibility": "Undergraduate students with CGPA above 3.7",
+      "deadline": "2025-07-01",
+      "amount": 25000,
+      "image": "https://i.ibb.co.com/xSMg2ykh/2.jpg",
+      "status": "Applied"
+    },
+    {
+      "id": 3,
+      "name": "ICT Innovation Scholarship",
+      "provider": "ICT Division Bangladesh",
+      "eligibility": "Tech students, final year",
+      "deadline": "2025-05-30",
+      "amount": 30000,
+      "image": "https://i.ibb.co.com/3GJLxfn/1.webp",
+      "status": "Not Applied"
+    },
+    {
+      "id": 4,
+      "name": "Women in STEM Scholarship",
+      "provider": "BRAC University",
+      "eligibility": "Female students in science or tech programs",
+      "deadline": "2025-06-10",
+      "amount": 0,
+      "image": "https://i.ibb.co.com/xSMg2ykh/2.jpg",
+      "status": "Applied"
+    },
+    {
+      "id": 5,
+      "name": "Need-Based Educational Aid",
+      "provider": "Private Donor Foundation",
+      "eligibility": "Low-income students, all departments",
+      "deadline": "2025-06-05",
+      "amount": 10000,
+      "image": "https://i.ibb.co.com/3GJLxfn/1.webp",
+      "status": "Expired"
+    },
+    {
+      "id": 6,
+      "name": "Bangabandhu Science Scholarship",
+      "provider": "University Grants Commission",
+      "eligibility": "Science background, 3rd-year undergrad",
+      "deadline": "2025-07-15",
+      "amount": 40000,
+      "image": "https://i.ibb.co.com/xSMg2ykh/2.jpg",
+      "status": "Not Applied"
+    },
+    {
+      "id": 7,
+      "name": "Creative Arts Grant",
+      "provider": "Cultural Affairs Ministry",
+      "eligibility": "Art/design/media students",
+      "deadline": "2025-05-25",
+      "amount": 20000,
+      "image": "https://i.ibb.co.com/3GJLxfn/1.webp",
+      "status": "Applied"
+    },
+    {
+      "id": 8,
+      "name": "Rural Talent Boost Scholarship",
+      "provider": "NGO Local Aid",
+      "eligibility": "Students from rural areas",
+      "deadline": "2025-06-20",
+      "amount": 0,
+      "image": "https://i.ibb.co.com/xSMg2ykh/2.jpg",
+      "status": "Not Applied"
+    },
+    {
+      "id": 9,
+      "name": "International Study Support",
+      "provider": "British Council Bangladesh",
+      "eligibility": "Planning to study abroad in 2025",
+      "deadline": "2025-08-01",
+      "amount": 5000,
+      "image": "https://i.ibb.co.com/3GJLxfn/1.webp",
+      "status": "Not Applied"
+    },
+    {
+      "id": 10,
+      "name": "Freelancer Education Aid",
+      "provider": "ICT Freelancer Association",
+      "eligibility": "Freelancers continuing studies",
+      "deadline": "2025-05-22",
+      "amount": 15000,
+      "image": "https://i.ibb.co.com/xSMg2ykh/2.jpg",
+      "status": "Applied"
+    }
+  ]
+  
