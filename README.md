@@ -60,8 +60,6 @@ DreamFunded/
 ---
 
 
-## Getting Started (For Developers)
-
 ### Client (React)
 ```bash
 cd client
