@@ -1,13 +1,74 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { IoIosLogOut } from "react-icons/io";
+import StudentDashbordNav from "../DashbordNav/StudentDashbords/StudentDashbordNav";
+import ProviderNav from "../DashbordNav/ProviderDashNav/ProviderNav";
+import AdminDash from "../DashbordNav/AdminDashNav/AdminDash";
 
 
 const Navbar = () => {
+  const {user,logOut} = useAuth();
+  const handleSignOut = () => {
+    logOut()
+    .then(()=>{
+          Swal.fire({
+        title: 'Successfully Log Out!',
+        icon: 'success',
+        background: 'rgba(15, 23, 42, 0.7)', 
+        color: '#fff',
+        backdrop: 'rgba(0,0,0,0.5)', 
+        customClass: {
+          popup: 'rounded-xl shadow-lg border border-white/50 backdrop-blur-md',
+          title: 'text-xl font-bold text-teal-400',
+          content: 'text-white',
+          confirmButton: 'bg-teal-600 text-white px-4 py-2 rounded-xl hover:bg-teal-700 transition-all'
+        },
+      })
+    })
+  }
   const userPerson=(
     <div>
-      <div className="flex items-center gap-0 text-sm">
+      {user ? <div className="dropdown dropdown-bottom flex justify-center items-center gap-3">
+        <span className="font-semibold ">{user?.displayName}</span>
+  <div tabIndex={0} role="button" className=" w-16 rounded-full 
+  ">  <img src="https://i.ibb.co/gF67Wycd/vecteezy-user-icon-on-transparent-background-19879186.png"/></div>
+  <ul tabIndex={0} className="dropdown-content menu  rounded-box z-10  p-2 w-44 bg-teal-900/90 -ms-20 border border-white/50 backdrop-blur-lg shadow-lg">
+
+
+<Link>
+{/* Dashboard Navigation------------------------- */}
+
+{/* student dashbord nav -------------------------- */}
+ <StudentDashbordNav></StudentDashbordNav>
+ 
+{/* Scholarship provider dashbord nav -------------------------- */}
+<ProviderNav></ProviderNav>
+
+{/* Admin dashbord nav -------------------------- */}
+
+<AdminDash></AdminDash>
+
+{/* Dashboard Navigation------------------------- */}
+
+  <li className="bg-black/50 w-full rounded-xl border border-white/30">
+    <button onClick={handleSignOut} className="  py-1 px-2 text-red-600 hover:scale-105 transform transition-all duration-300 font-bold flex justify-center items-center gap-3">Log Out <IoIosLogOut></IoIosLogOut> </button>
+  </li>
+    </Link>
+    
+  </ul>
+</div>
+:
+<div className="flex items-center gap-0 text-sm">
+  <Link to="/signIn">
         <button className="border-2 backdrop-blur-md px-2 py-1 shadow-md shadow-black hover:scale-105 hover:bg-teal-500 hover:text-white transform  transition-all duration-300 border-teal-500 rounded-s-3xl">LOG In</button>
+        </Link>
+        <Link to="/signUp">
         <button className="border-2 backdrop-blur-md px-2 py-1 shadow-md shadow-black hover:scale-105 hover:bg-teal-500 hover:text-white transform  transition-all duration-300 border-teal-500 rounded-e-3xl">Sign Up</button>
+        </Link>
       </div>
+ }
+      
     </div>
 
   )
@@ -16,20 +77,20 @@ const Navbar = () => {
     <Link>
       <li><button className="border-2 backdrop-blur-sm border-teal-500 px-3 py-1 text-teal-400 shadow-inner hover:scale-105 hover:bg-teal-500 hover:text-white transform  transition-all duration-300 shadow-black rounded-3xl font-bold">Home</button></li>
     </Link>
-    <Link>
+    <Link to={'/scholarship'}>
       <li><button className="border-2 backdrop-blur-sm border-teal-500 px-3 py-1 text-teal-400 shadow-inner hover:scale-105 hover:bg-teal-500 hover:text-white transform  transition-all duration-300 shadow-black rounded-3xl font-bold">Scholarships</button></li>
     </Link>
-    <Link>
+    <Link to={'/about'}>
       <li><button className="border-2 backdrop-blur-sm border-teal-500 px-3 py-1 text-teal-400 shadow-inner hover:scale-105 hover:bg-teal-500 hover:text-white transform  transition-all duration-300 shadow-black rounded-3xl font-bold">About</button></li>
     </Link>
-    <Link>
+    <Link to={'/contact'}>
       <li><button className="border-2 backdrop-blur-sm border-teal-500 px-3 py-1 text-teal-400 shadow-inner hover:scale-105 hover:bg-teal-500 hover:text-white transform  transition-all duration-300 shadow-black rounded-3xl font-bold">Contact</button></li>
     </Link>
    
     </div>
   );
   return (
-    <div className="navbar z-10  bg-opacity-30 text-white max-w-[1280px] mx-auto bg-black">
+    <div className="navbar fixed z-10 shadow-md shadow-black/30 bg-opacity-30 text-white backdrop-blur-md -mb-2 max-w-[1280px] mx-auto bg-black">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

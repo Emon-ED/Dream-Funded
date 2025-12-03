@@ -1,0 +1,101 @@
+import { useState } from "react";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
+
+
+const SignIn = () => {
+  const navigate = useNavigate();
+  const {signIn,googleSignIn} = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+const handleSubmit =(e)=>{
+e.preventDefault();
+const form = e.target;
+const email = form.email?.value;
+const password = form.password?.value;
+signIn(email,password)
+.then(user =>{
+  if(user){
+    Swal.fire({
+      title: 'Log In Successfully!',
+      icon: 'success',
+      background: 'rgba(15, 23, 42, 0.7)', 
+      color: '#fff',
+      backdrop: 'rgba(0,0,0,0.5)', 
+      customClass: {
+        popup: 'rounded-xl shadow-lg border border-white/50 backdrop-blur-md',
+        title: 'text-xl font-bold text-teal-400',
+        content: 'text-white',
+        confirmButton: 'bg-teal-600 text-white px-4 py-2 rounded-xl hover:bg-teal-700 transition-all'
+      },
+    })
+  }
+  navigate('/');
+
+})
+
+}
+
+const handleGoogleSignUp = ()=>{
+
+}
+  return (
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="w-full max-w-md bg-black/5 border backdrop-blur-md shadow-md shadow-black/50 border-white/20 p-6 rounded-xl ">
+      <form
+         onSubmit={handleSubmit}
+         className="space-y-4 w-full "
+       >
+         <h2 className="text-2xl font-bold text-center">Sign In</h2>
+   
+
+         <input
+           name="email"
+           type="email"
+           placeholder="Email"
+           className="input input-bordered w-full placeholder:text-white bg-transparent border-2 border-teal-600 rounded-3xl"
+           required
+         />
+   
+           <div className="relative">
+           <input
+             name="password"
+             type={showPassword ? "text" : "password"} 
+             placeholder="Password"
+             className="input input-bordered w-full placeholder:text-white bg-transparent border-2 border-teal-600 rounded-3xl pr-10"
+   
+             required
+           />
+           <button
+             type="button"
+             onClick={() => setShowPassword(!showPassword)}
+             className="absolute right-4 top-3 text-sm text-gray-600 hover:text-gray-800"
+           >
+             {showPassword ? <FaRegEye className="text-white text-xl"></FaRegEye >  : <FaRegEyeSlash className="text-white text-xl"></FaRegEyeSlash> }
+           </button>
+         </div>
+          
+         <button type="submit" className="btn w-full bg-transparent border-2 hover:bg-teal-500 border-teal-600 hover:scale-105 bg-teal-500 text-white transform  transition-all duration-300 shadow-black rounded-3xl">
+           Sign Up
+         </button>
+         
+       </form>
+         <div className=" text-teal-400 mt-2">
+               <button onClick={handleGoogleSignUp} className="px-2 py-2 flex justify-center gap-3 mx-auto items-center w-1/2 bg-transparent border-2 border-teal-600 hover:scale-105 bg-teal-500 text-white transform transition-all duration-300 shadow-black rounded-3xl">
+               <FcGoogle className="text-xl "></FcGoogle>  Google
+             </button>
+              </div>
+              <div className="text-center text-white mt-4">
+                Don't have an account?{" "}
+               <Link to="/signUp" className="text-teal-400 hover:underline">Sign Up</Link>
+                
+              </div>
+  </div>
+    </div>
+ 
+  )
+}
+
+export default SignIn

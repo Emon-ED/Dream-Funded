@@ -7,21 +7,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
+import useScholarships from '../../Hooks/useScholarships';
 
 
 const Scholar = () => {
-    const [scholar, setScholar] = useState([]);
+ const {topScholarships,isLoading}=useScholarships();
 
-    useEffect(() => {
-        fetch("info.json") // Adjusted path
-            .then(res => res.json())
-            .then(data => setScholar(data))
-            .catch(err => console.error("Error fetching data:", err)); // Added error handling
-    }, []);
-
-//  slider ---------------------------
-
-  
+  if (isLoading) {
+  return <p className="text-center py-10">Loading scholarships...</p>;
+}
 
     return (
         <Swiper
@@ -48,7 +42,7 @@ const Scholar = () => {
         className="mySwiper"
       >
 
-{scholar.map(item => <SwiperSlide key={item.id}><Cart item={item}></Cart></SwiperSlide>)}
+{topScholarships.map(item => <SwiperSlide key={item._id}><Cart item={item}></Cart></SwiperSlide>)}
 
       </Swiper>
       

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -7,15 +7,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 import ReviewsCart from "./ReviewsCart";
+import useReviews from "../../../Hooks/useReviews";
 
 const ReviewSlider = () => {
-    const [reviews, setReviews]= useState([]);
-
-    useEffect(()=>{
-        fetch('reviews.json')
-        .then(res=>res.json())
-        .then(data=>setReviews(data))
-    },[])
+  
+    const {reviews} =useReviews();
   return (
     <>
         <Swiper
